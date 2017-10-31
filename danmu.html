@@ -1,0 +1,67 @@
+<!--
+	时间：2017-10-31
+	作品名：弹幕墙
+	所用到的知识点：标签marquee动态化移动，标签的隐藏。
+	作者：wyc
+-->
+<html>
+    <head>
+    	<script type="text/javascript">
+    	var arr =new Array();
+    	function send(){
+            var str=document.getElementById("text-content").value; 
+            console.log(str);
+             if (str ==""){
+             	alert("输入不能为空");
+             	return false;
+             }
+            len=parseInt(arr.length);
+            arr[len]=str;         
+            var element = document.createElement("marquee");
+            var node = document.createTextNode(str);
+            element.appendChild(node);
+            x = document.getElementById("dm_content"); 
+            x.appendChild(element); 
+    	} 
+    	function clear_screen(){
+			document.getElementByTagName("dm_content").style.visibility="hidden";
+		}  
+    </script>
+    </head>
+    <body>    	
+    <style>
+    #dm_content{
+    	width:100%;
+        height:250px;
+        border-style: solid;
+        border-color: gray;
+        border-width: 0.5px; 
+    }
+    .form-style{
+    	text-align: center;
+    	margin-top:20px;
+    }
+    .input-style{
+    	width:25%;
+    	height:30px;
+    }
+    .button-type{
+    	border-color:red;
+        border-style: solids;
+        border-width: 1px;
+        width:150px;
+        height:25px;
+    }
+    </style>
+    <div id="dm_content">
+      <!--<marquee direction=left>1我从右向左移！</marquee>-->
+    </div>
+    <form class="form-style">	
+    	<input type="text" placeholder="please input something" class="input-style" id="text-content">
+    	<div>
+    	    <input type="button" class="button-type" onclick="send()" value="send">
+    	    <button class="button-type" onclick="clear_screen()">clear</button>
+        </div>
+    </form>
+</body>
+</html>
