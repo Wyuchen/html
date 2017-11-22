@@ -1,0 +1,28 @@
+/*检查回文字符串
+#如果给定的字符串是回文，返回true，反之，返回false
+#注意你需要去掉字符串多余的标点符号和空格，然后把字符串转化成小写来验证此字符串是否为回文*/
+<html>
+<script type="text/javascript">
+function palindrome(str) {
+    /*将字符串中的(\s代表空格,\W代表非单词字符,[^a-zA-Z0-9]代表非字母数字的字符)替换成空*/
+    var arra=str.replace(/\s/g,"").replace(/[^a-zA-Z0-9]/g,"").replace(/\W/g,""); 
+    /*将转换后的字符串中的大写字母转换成小写字母*/
+    var lower_newStr = arra.toLowerCase();
+    /*将字符串以单个字母进行分离,分离成数组*/
+    var arr = lower_newStr.split("");
+    /*将数组倒序排列*/
+    var arr_reverse = arr.reverse();
+    /*将数组拼接成字符串*/
+    var renewStr = arr_reverse.join("");
+   /*判断原先的字符串和新得到字符串是否相等*/
+   if(renewStr == lower_newStr){
+      return true;
+   }
+   else{
+     return false;
+  } 
+}
+
+palindrome("eye");
+</script>
+</html>
