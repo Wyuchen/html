@@ -1,0 +1,23 @@
+<html>
+<script type="text/javascript">
+function findLongestWord(str) {
+  /*
+   1.在句子中找出最长的单词，并返回它,长度
+   2.冒泡排序JavaScript代码
+  */
+  var str1; 
+  var array=str.split(" ");
+  for(var i=0;i<array.length;i++){
+     for (var j=0;j<array.length-1-i;j++) {
+     	if(array[j].length > array[j+1].length){
+     		str1=array[j+1];
+     		array[j+1]=array[j];
+     		array[j]=str;
+     	}
+    }	
+  }
+  document.write("the Longest Word:"+array[array.length-1]+"      length:"+array[array.length-1].length);
+};
+findLongestWord("The quick brown fox jumped over the lazy dog");
+</script>
+</html>
