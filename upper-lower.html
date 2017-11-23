@@ -1,0 +1,19 @@
+<html>
+<script type="text/javascript">
+function titleCase(str) {
+  /*
+  1.确保字符串的每个单词首字母都大写，其余部分小写
+  2.substring()方法用于提取字符串中介于两个指定下标之间的字符
+  3.大小写转换:str.toUpperCase(),str.toLowerCase()
+  */
+  var array=str.split(" ");
+  for(var i=0;i<array.length;i++){
+  	var str1=array[i].substring(0,1).toUpperCase()+array[i].substring(1,).toLowerCase();
+  	array[i]=str1;
+  }
+  document.write(array.join(" ")); 
+}
+
+titleCase("sHoRt AnD sToUt");
+</script>
+</html>
