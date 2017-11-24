@@ -1,0 +1,25 @@
+<html>
+<script type="text/javascript">
+function bouncer(arr) {
+  /*1.过滤数组假值,假值有false、null、0、""、undefined 和 NaN。
+    2.NaN 属性是代表非数字值的特殊值。该属性用于指示某个值不是数字,类型为number
+    3.NaN===NaN  ---->false
+  */
+ var array=new Array();
+ var array1=new Array(); 
+ for(var i = 0; i < arr.length; i++) {
+    if(!arr[i]) {  //如果是假值,将数组下标复制到新的数组中
+       array.push(i);
+    }    
+  }
+   var str=array.join("");  //将数组转换成字符串
+   for(var j=0;j<arr.length;j++){
+   	if(str.indexOf(j)<0){  //判断最开始的数组中的下标不在此字符串中即该下标的数组值为所找的值,将它赋值该另外一个数组
+   		array1.push(arr[j]);
+   	}
+   }
+   document.write(array1);
+}
+bouncer([1,null,NaN,2,undefined,0]);
+</script>
+</html>
