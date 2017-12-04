@@ -1,0 +1,35 @@
+<html>
+<!-- 
+代码要求：1.先给数组排序，然后找到指定的值在数组的位置，最后返回位置对应的索引
+        2.sort()调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序
+        3.sort(function),function中：
+            1）a 小于 b，返回小于0的值
+            2）a 等于 b,返回0；
+            3）a 大于 b，返回大于0的值；
+       4.判断一个数是否在数组中使用indexOf()方法，返回值>=0,说明数组包含这个数，返回值<0，说明数组不包含这个数。
+-->
+<script type="text/javascript">
+function sortNum(a,b){
+	return a-b;
+}
+var i=0;
+function where(arr, num) {
+  arr.sort(sortNum);
+  if(arr.indexOf(num)>=0){
+         document.write(arr.indexOf(num));
+  }
+  else{
+  	arr.push(num);
+        arr.sort(sortNum);
+  	for(var i=0;i<arr.length;i++){
+  		if(arr[i]==num){
+  			document.write(i);
+  		}
+  	}
+  }
+
+}
+where([2, 20, 10], 19);
+
+</script>
+</html>
